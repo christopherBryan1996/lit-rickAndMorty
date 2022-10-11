@@ -1,4 +1,5 @@
-import { LitElement } from "lit-element";
+import { LitElement, html } from "lit-element";
+import { style } from "../css/css-main";
 import GetMasterData from "./Get-masterData";
 
 class MainContainer extends LitElement{
@@ -6,6 +7,11 @@ class MainContainer extends LitElement{
         return{
             character:{type: Array}
         }
+    }
+    static get styles(){
+        return[
+            style
+        ]
     }
     constructor(){
         super()
@@ -23,9 +29,27 @@ class MainContainer extends LitElement{
     _showError(error){
         console.log(error)
     }
+    _handleOnClick(e){
+        return html`
+            hola
+        `
+    }
     render(){
-        
-        console.log('list',this.character)
+        if(this.character){
+            return html`
+                <div class="div-global">
+                    ${this.character.map(e => html`
+                        <div class='card'>
+                            <img src=${e.image} alt='character' class='img-character'/>
+                            <h1 class='name'>${e.name}</h1>
+                            <p>Species: ${e.species}</p>
+                            <p>Gender: ${e.gender}</p>
+                            <button id=${e.id} @click=${this._handleOnClick}>Watch</button>
+                        </div>
+                    `)}
+                </div>
+            `
+        }
     }
 }
 
