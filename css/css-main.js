@@ -41,4 +41,21 @@ export const style=css`
     button {
         margin: 10px 0px 0px 0px;
     }
+    .modal{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background: #faebd7a8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        flex-direction: column;
+    }
+    .hidden{
+        display:none;
+        color:white;
+    }
 `
