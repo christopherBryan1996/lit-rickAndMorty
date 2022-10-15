@@ -1,3 +1,4 @@
+
 {
   "dependencies": {
     "lit-element": "^3.2.2"
@@ -7,11 +8,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "devDependencies": {
-    "@web/dev-server": "^0.1.34"
+    "@web/dev-server": "^0.1.34",
+    "snowpack": "^3.8.8"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "web-dev-server --node-resolve --open --watch"
+    "start": "snowpack dev",
+    "build": "snowpack build"
   },
   "repository": {
     "type": "git",
